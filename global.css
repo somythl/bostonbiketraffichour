@@ -1,0 +1,84 @@
+
+body {
+  font: 100%/1.5 system-ui, sans-serif;
+  display: flex;
+  flex-flow: column;
+  max-width: 80em;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: auto;
+  padding: 1em;
+}
+
+html, body {
+  margin: 0;
+  padding: 5;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+}
+   
+#map {
+  width: 100%;    /* Adjust width to your desired size */
+  height: 100%;   /* Adjust height to your desired size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for effect */
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+#map svg {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+circle {
+  pointer-events: auto; /* Ensures tooltips work */
+}
+
+
+#time-filter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+/* Keeps the label and slider in one row */
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Makes "Any time" and the selected time appear below the slider */
+.time-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4px;
+}
+
+#time-slider {
+  width: 120px;
+}
+
+#any-time {
+  color: gray;
+  font-style: italic;
+  font-size: 0.85em;
+}
+
+#time-display {
+  font-size: 0.95em;
+  font-weight: bold;
+}
