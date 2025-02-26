@@ -37,6 +37,14 @@ html, body {
 
 circle {
   pointer-events: auto; /* Ensures tooltips work */
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+  --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+  );
+  fill: var(--color);
 }
 
 
@@ -81,4 +89,33 @@ circle {
 #time-display {
   font-size: 0.95em;
   font-weight: bold;
+}
+
+
+.legend {
+  display: flex;
+  gap: 1px;
+  margin-block: 1em;
+  width: 100%;
+}
+
+.legend > .legend-item {
+  flex: 1;
+  padding: 0.5em 1em;
+  text-align: center;
+  color: white;
+  background-color: var(--legend-bg);
+}
+
+/* Explicit class overrides for the background color */
+.legend > .departures {
+  --legend-bg: steelblue;
+}
+
+.legend > .balanced {
+  --legend-bg: hotpink;
+}
+
+.legend > .arrivals {
+  --legend-bg: darkorange;
 }
